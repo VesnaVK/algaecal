@@ -45,7 +45,7 @@ gulp.task('styles', function () {
 gulp.task('scripts', function() {
     return gulp.src([
 			'node_modules/bootstrap/dist/js/bootstrap.min.js',
-			'node_modules/jquery/jquery.min.js',
+			'ls node_modules/jquery/dist/jquery.min.js',
 			'node_modules/popper.js/dist/popper.min.js'
 		])
         .pipe(gulp.dest("dist/scripts"));
