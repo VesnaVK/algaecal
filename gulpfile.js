@@ -13,8 +13,9 @@ var gulp = require('gulp'),
 gulp.task('styles', function () {
 	var injectAppFiles = gulp.src(
 		[
+			'src/styles/override/*.scss',
 			'node_modules/bootstrap/scss/bootstrap.scss',
-			'src/styles/**/*.scss'
+			'src/styles/*.scss'
 		], 
 		{read: false}
 	);
