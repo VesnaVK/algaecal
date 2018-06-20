@@ -15,7 +15,13 @@ var path = {
 // Builds a CSS file from SCSS files.
 // Includes error check, autoprefix, minify.
 gulp.task('styles', function () {
-	var injectAppFiles = gulp.src('src/styles/*.scss', {read: false});
+	var injectAppFiles = gulp.src(
+		[
+			'node_modules/bootstrap/scss/bootstrap.scss',
+			'src/styles/*.scss'
+		], 
+		{read: false}
+	);
  
 	function transformFilepath(filepath) {
 	  return '@import "' + filepath + '";';

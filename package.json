@@ -27,7 +27,10 @@
     "gulp-sass": "^4.0.1"
   },
   "dependencies": {
+    "bootstrap": "^4.1.1",
+    "jquery": "^1.9.1",
     "minimatch": "^3.0.2",
+    "popper.js": "^1.14.3",
     "static-server": "^2.2.1"
   }
 }
