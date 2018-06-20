@@ -5,6 +5,7 @@ var gulp = require('gulp'),
 	plumber = require('gulp-plumber'),
 	logger = require('fancy-log'),
 	del = require('del'),
+	sourcemaps = require('gulp-sourcemaps'),
 	sync = require('browser-sync').create();
 
 // Builds a CSS file from SCSS files.
@@ -36,9 +37,11 @@ gulp.task('styles', function () {
 			logger.error(err);
 			this.emit('end');
 		}))
+		.pipe(sourcemaps.init())
 		.pipe(sass({outputStyle: 'compressed'})
 			.on('error', sass.logError))
 		.pipe(autoprefixer())
+		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('dist/styles'))
 		.pipe(sync.stream());
 });
